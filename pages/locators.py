@@ -1,5 +1,9 @@
 from selenium.webdriver.common.by import By
 
+class BasePageLocators():
+    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+
 class MainPageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
 
@@ -16,6 +20,6 @@ class ProductPageLocators():
 
     ACTUAL_PRICE = (By.CSS_SELECTOR, "div.col-sm-6.product_main > p:nth-child(2)")
     BASKET_PRICE = (By.CSS_SELECTOR, "div.alert-info > .alertinner > p > strong")
-    
+
     NAME_OF_PRODUCT = (By.CSS_SELECTOR, "div.col-sm-6.product_main > h1")
     WHAT_ADDED = (By.CSS_SELECTOR, "div.alert.alert-safe.alert-noicon.alert-success:nth-child(1) > .alertinner > strong")
