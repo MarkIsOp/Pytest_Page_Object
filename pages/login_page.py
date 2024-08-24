@@ -20,3 +20,13 @@ class LoginPage(BasePage):
         assert self.is_element_present(*LoginPageLocators.REG_EMAIL_FIELD), "Login field is not presented"
         assert self.is_element_present(*LoginPageLocators.REG_PASS1_FIELD), "Pass field is not presented"
         assert self.is_element_present(*LoginPageLocators.REG_PASS2_FIELD), "Repeat pass field is not presented"
+
+    def register_new_user(self, email, password):
+        mail = self.browser.find_element(*LoginPageLocators.REG_EMAIL_FIELD)
+        mail.send_keys(email)
+        pass1 = self.browser.find_element(*LoginPageLocators.REG_PASS2_FIELD)
+        pass1.send_keys(password)
+        pass2 = self.browser.find_element(*LoginPageLocators.REG_PASS1_FIELD)
+        pass2.send_keys(password)
+        submit = self.browser.find_element(*LoginPageLocators.REG_SUBMIT)
+        submit.click()

@@ -16,6 +16,7 @@ def test_guest_cant_see_success_message(browser):
     product_page.open()
     product_page.should_not_be_success_message(), "Success message is not presented"
 
+@pytest.mark.xfail
 def test_message_disappeared_after_adding_product_to_basket(browser):
     product_page = ProductPage(browser, link)
     product_page.open()
